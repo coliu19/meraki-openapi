@@ -43,7 +43,7 @@ jobs:
           echo Diff catalogue spec
 
       - name: test upload
-        if: always()
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: ./.github/actions/upload
 
       # - uses: actions/checkout@v3

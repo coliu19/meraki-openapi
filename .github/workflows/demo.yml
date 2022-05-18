@@ -36,13 +36,15 @@ jobs:
         if: always()
         run: |
           echo Analyze spec against rules
-          ./.bin/apiregistryctl analyze openapi/catalogue.json
 
       - name: Diff catalogue spec with latest
         if: always()
         run: |
           echo Diff catalogue spec
-          ./.bin/apiregistryctl diff openapi/catalogue.json -s catalogue --latest -o text --fail-on-incompatible
+
+      - name: test upload
+        if: always()
+        uses: ./.github/workflow/upload.yml
 
       # - uses: actions/checkout@v3
       # - name: Upload spec

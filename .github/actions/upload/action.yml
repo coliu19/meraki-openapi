@@ -10,18 +10,17 @@ runs:
 
     # Set tag env
     - name: Set tag env
-      shell: bash
       run: echo "RELEASE_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      shell: bash
     - name: Echo tag env
-      shell: sh
       run: |
         echo ${{ env.RELEASE_TAG }}
+      shell: sh
 
     # Parse and set verstion and revision env from tag
     - id: parse-tags
       name: Parse tags
       uses: actions/github-script@v6
-      shell: bash
       with:
         script: |
           const items = "${{ env.RELEASE_TAG }}".split('-')

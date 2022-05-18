@@ -1,5 +1,6 @@
 on:
   workflow_call:
+
 name: upload
 runs:
   using: "composite"
@@ -9,7 +10,6 @@ runs:
 
     # Set tag env
     - name: Set tag env
-      shell: bash
       run: echo "RELEASE_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
     - name: Echo tag env
       shell: bash

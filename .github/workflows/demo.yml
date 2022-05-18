@@ -44,7 +44,7 @@ jobs:
 
       - name: test upload
         if: always()
-        uses: ./.github/workflow/upload
+        uses: ./.github/actions/upload
 
       # - uses: actions/checkout@v3
       # - name: Upload spec

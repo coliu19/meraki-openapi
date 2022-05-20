@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "0.1",
+    "version": "0.0",
     "title": "Catalogue resources",
     "description": "catalogue",
     "contact": {
@@ -312,52 +312,6 @@
             },
             "schema": {
               "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": ["Sample"],
-        "description": "delete the item in the blacklist",
-        "operationId": "delete-an-item",
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ],
-        "produces": ["application/json; charset=UTF-8"],
-        "parameters": [
-          {
-            "description": "catalogue id",
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-example": "a0a4f044-b040-410d-8ead-4de0446aec7e"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content",
-            "headers": {
-              "TRACKINGID": {
-                "type": "string"
-              },
-              "Date": {
-                "type": "string"
-              },
-              "Link": {
-                "type": "string"
-              },
-              "ETag": {
-                "type": "string"
-              },
-              "If-Match": {
-                "type": "string"
-              },
-              "If-None-Match": {
-                "type": "string"
-              }
             }
           }
         }
@@ -711,8 +665,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -751,7 +704,7 @@
         "tags"
       ],
       "example": {
-        "id": 123,
+        "id": "id",
         "name": "name1",
         "description": "desc",
         "imageUrls": ["https://abc.com/1.png"],

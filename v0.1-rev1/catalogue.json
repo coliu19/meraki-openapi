@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "0.1",
+    "version": "v0.1",
     "title": "Catalogue resources",
     "description": "catalogue",
     "contact": {
@@ -302,8 +302,7 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string",
-            "x-example": "a0a4f044-b040-410d-8ead-4de0446aec7e"
+            "type": "integer"
           }
         ],
         "responses": {
@@ -753,8 +752,7 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "integer",
-          "format": "int64"
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -793,7 +791,7 @@
         "tags"
       ],
       "example": {
-        "id": 123,
+        "id": "id",
         "name": "name1",
         "description": "desc",
         "imageUrls": ["https://abc.com/1.png"],

@@ -53,7 +53,7 @@ v0.1-rev2: fix all the issues in v0.1-rev1
 * apiregistryctl
 ```
 apiregistryctl analyze v0.1-rev1/catalogue.json
-apiregistryctl diff v0.1-rev1/catalogue.json -s catalogue --version 0.0 --revision 2 -o text --fail-on-incompatible
+apiregistryctl diff v0.1-rev1/catalogue.json -s catalogue --version v0.0 --revision 2 -o text --fail-on-incompatible
 apiregistryctl service uploadspec v0.0-rev2/catalogue.json -s catalogue --version v0.0 --revision base
 ```
 

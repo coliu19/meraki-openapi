@@ -81,7 +81,7 @@
             "name": "sort",
             "maxLength": 255,
             "minLength": 1,
-            "pattern": ".*",
+            "pattern": "[^/]*",
             "type": "string"
           },
           {
@@ -119,7 +119,7 @@
               "ETag": {
                 "maxLength": 255,
                 "minLength": 1,
-                "pattern": "[^/]*",
+                "pattern": ".*",
                 "type": "string"
               },
               "If-Match": {
@@ -431,126 +431,6 @@
         }
       }
     },
-    "/catalogue/personalize": {
-      "get": {
-        "tags": ["Sample"],
-        "security": [
-          {
-            "BearerAuth": []
-          }
-        ],
-        "description": "Get personalize data per vendor's blacklist",
-        "operationId": "List-catalogue-personalize",
-        "produces": ["application/json;charset=UTF-8"],
-        "parameters": [
-          {
-            "description": "query",
-            "in": "query",
-            "name": "max",
-            "maximum": 255,
-            "minimum": 1,
-            "format": "double",
-            "type": "number"
-          },
-          {
-            "description": "query",
-            "in": "query",
-            "name": "offset",
-            "maximum": 255,
-            "minimum": 1,
-            "format": "double",
-            "type": "number"
-          },
-          {
-            "description": "query",
-            "in": "query",
-            "name": "sort",
-            "maxLength": 255,
-            "minLength": 1,
-            "pattern": "[^/]*",
-            "type": "string"
-          },
-          {
-            "description": "query",
-            "in": "query",
-            "name": "order",
-            "maxLength": 255,
-            "minLength": 1,
-            "pattern": "[^/]*",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "headers": {
-              "TRACKINGID": {
-                "maxLength": 255,
-                "minLength": 1,
-                "pattern": "[^/]*",
-                "type": "string"
-              },
-              "Date": {
-                "maxLength": 255,
-                "minLength": 1,
-                "pattern": "[^/]*",
-                "type": "string"
-              },
-              "Link": {
-                "maxLength": 255,
-                "minLength": 1,
-                "pattern": "[^/]*",
-                "type": "string"
-              },
-              "ETag": {
-                "maxLength": 255,
-                "minLength": 1,
-                "pattern": "[^/]*",
-                "type": "string"
-              },
-              "If-Match": {
-                "maxLength": 255,
-                "minLength": 1,
-                "pattern": "[^/]*",
-                "type": "string"
-              },
-              "If-None-Match": {
-                "maxLength": 255,
-                "minLength": 1,
-                "pattern": "[^/]*",
-                "type": "string"
-              }
-            },
-            "schema": {
-              "type": "object",
-              "properties": {
-                "items": {
-                  "maxItems": 100,
-                  "minItems": 0,
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/definitions/Listresponse"
-                  }
-                }
-              },
-              "example": {
-                "item": [
-                  {
-                    "id": "id",
-                    "name": "name1",
-                    "description": "desc",
-                    "imageUrl": ["https://abc.com/1.png"],
-                    "price": 10,
-                    "count": 2,
-                    "tag": ["tag1"]
-                  }
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
     "/catalogue/{id}": {
       "get": {
         "tags": ["Sample"],
@@ -568,10 +448,10 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "maximum": 255,
-            "minimum": 1,
-            "format": "double",
-            "type": "number"
+            "maxLength": 255,
+            "minLength": 1,
+            "pattern": "[^/]*",
+            "type": "string"
           }
         ],
         "responses": {

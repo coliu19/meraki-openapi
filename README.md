@@ -29,6 +29,17 @@ v0.1-rev1: add some violations against perfect spec
 v0.1-rev2: fix all the issues in v0.1-rev1
 ```
 
+## scripts
+
+* Reset all services in sockshop
+```
+./reset-sockshop.sh
+```
+* Delete one or more services by specify some keywords. (Be careful, This is global match, so use some keyword that match your purpose).
+```
+./delete.sh my-special-servce
+```
+
 ## workflow explaination
 
 0. Prepare catalogue service(delete and recreate), upload raw spec v0.0-rev1 and perfect spec v0.0-rev2. If you use other env, you need to change the host of the script.

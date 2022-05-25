@@ -2,8 +2,13 @@
 
 set -ex
 
-org="some org name"
+if [ -z "$1" ]; then
+  echo please specify the service/org keyword that you want to delete
+  exit
+fi
+org="$1"
 
+host=https://devnet-testing.cisco.com
 # service=bbc
 # printf -v payload '{ "organization_id": "xxx", "product_tag": "Book Shop", "name_id": "%s", "title": "demo %s", "description": "%s API", "contact": {} }' "$service" "$service" "$service"
 # apiregistryctl -H "$host" service create --data "$payload" --debug || true

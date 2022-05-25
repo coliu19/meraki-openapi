@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "0.0",
+    "version": "0.1",
     "title": "Catalogue resources",
     "description": "catalogue",
     "contact": {
@@ -192,6 +192,94 @@
             },
             "schema": {
               "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/catalogue/personalize": {
+      "get": {
+        "description": "Get personalize data per vendor's blacklist",
+        "operationId": "Get-personalize",
+        "tags": ["Sample"],
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "produces": ["application/json;charset=UTF-8"],
+        "parameters": [
+          {
+            "description": "query",
+            "in": "query",
+            "name": "max",
+            "type": "number"
+          },
+          {
+            "description": "query",
+            "in": "query",
+            "name": "offset",
+            "type": "number"
+          },
+          {
+            "description": "query",
+            "in": "query",
+            "name": "sort",
+            "type": "string"
+          },
+          {
+            "description": "query",
+            "in": "query",
+            "name": "order",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "TRACKINGID": {
+                "type": "string"
+              },
+              "Date": {
+                "type": "string"
+              },
+              "Link": {
+                "type": "string"
+              },
+              "ETag": {
+                "type": "string"
+              },
+              "If-Match": {
+                "type": "string"
+              },
+              "If-None-Match": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Listresponse"
+                  }
+                }
+              },
+              "example": {
+                "item": [
+                  {
+                    "id": "id",
+                    "name": "name1",
+                    "description": "desc",
+                    "imageUrl": ["https://abc.com/1.png"],
+                    "price": 10,
+                    "count": 2,
+                    "tag": ["tag1"]
+                  }
+                ]
+              }
             }
           }
         }
@@ -665,7 +753,8 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "type": "integer",
+          "format": "int64"
         },
         "name": {
           "type": "string"
@@ -704,7 +793,7 @@
         "tags"
       ],
       "example": {
-        "id": "id",
+        "id": 123,
         "name": "name1",
         "description": "desc",
         "imageUrls": ["https://abc.com/1.png"],

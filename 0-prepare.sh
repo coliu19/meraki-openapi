@@ -20,7 +20,7 @@ cp v0.0-rev2/catalogue.json openapi/
 # git diff
 
 git add openapi/catalogue.json
-git commit -m "perfect catalogue api"
+git commit -m "perfect catalogue api" || true
 git push
 
 ./trigger-ci-upload.sh v0.0-2

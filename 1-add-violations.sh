@@ -6,7 +6,7 @@ cp v0.1-rev1/catalogue.json openapi/
 git --no-pager diff
 
 git add openapi/catalogue.json
-git commit -m "add delete catalogue api"
+git commit -m "add personalize catalogue api"
 git push
 
 ./trigger-ci-upload.sh v0.1-1

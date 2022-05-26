@@ -23,6 +23,7 @@ You can simply follow the below steps to demo in staging without viewing other p
 ## folders
 
 ```
+openapi: the working dir for specs
 v0.0-rev1: raw spec
 v0.0-rev2: perfect spec
 v0.1-rev1: add some violations against perfect spec

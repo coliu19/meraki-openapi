@@ -45,7 +45,7 @@
   "consumes": ["application/json;charset=UTF-8"],
   "produces": ["application/json;charset=UTF-8"],
   "paths": {
-    "/catalogue": {
+    "/catalogues": {
       "get": {
         "tags": ["Sample"],
         "security": [
@@ -1134,6 +1134,7 @@
     "/tags": {
       "get": {
         "description": "OK",
+        "deprecated": true,
         "operationId": "List_",
         "tags": ["Sample"],
         "security": [

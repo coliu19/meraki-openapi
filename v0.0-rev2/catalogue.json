@@ -81,7 +81,7 @@
             "name": "sort",
             "maxLength": 255,
             "minLength": 1,
-            "pattern": "[^/]*",
+            "pattern": ".*",
             "type": "string"
           },
           {
@@ -119,7 +119,7 @@
               "ETag": {
                 "maxLength": 255,
                 "minLength": 1,
-                "pattern": ".*",
+                "pattern": "[^/]*",
                 "type": "string"
               },
               "If-Match": {

@@ -23,6 +23,7 @@ for service in ${services[*]}; do
   echo create "$service"
 
   printf -v payload '{ "organization_id": "DevNet", "product_tag": "%s", "name_id": "%s", "title": "%s Demo API", "description": "%s microservice for %s demo application", "contact": {"name": "Engineering Team", "email": "engineering@merchandiseshop.com", "url": "https://app-8081-apiregistry1.devenv-int.ap-ne-1.devnetcloud.com/"}, "analyzers_configs": {"drift": {"service_name_id": "%s.sock-shop"}} }' "$product_tag" "$service" "$service_title" "$service_title" "$product_tag" "$service"
+
   apiregistryctl -H "$host" service create --data "$payload" || true
 done
 apiregistryctl -H "$host" service list

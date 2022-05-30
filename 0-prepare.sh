@@ -5,10 +5,12 @@ host=https://devnet-testing.cisco.com
 
 service=catalogue
 product_tag="DevRel Wear"
+service_title="$(tr '[:lower:]' '[:upper:]' <<< ${service:0:1})${service:1}"
 
 apiregistryctl service delete "$service" --debug || true
 
-printf -v payload '{ "organization_id": "DevNet", "product_tag": "%s", "name_id": "%s", "title": "%s demo", "description": "%s API for demo a microservice communication in sockshop", "contact": {"name": "Engineering Team", "email": "engineering@merchandiseshop.com", "url": "https://testing-developer.cisco.com/api-registry/reports?service=%s"}, "analyzers_configs": {"drift": {"service_name_id": "%s.sock-shop"}} }' "$product_tag" "$service" "$service" "$service" "$service" "$service"
+printf -v payload '{ "organization_id": "DevNet", "product_tag": "%s", "name_id": "%s", "title": "%s Demo API", "description": "%s microservice for %s demo application", "contact": {"name": "Engineering Team", "email": "engineering@merchandiseshop.com", "url": "https://app-8081-apiregistry1.devenv-int.ap-ne-1.devnetcloud.com/"}, "analyzers_configs": {"drift": {"service_name_id": "%s.sock-shop"}} }' "$product_tag" "$service" "$service_title" "$service_title" "$product_tag" "$service"
+
 apiregistryctl -H "$host" service create --data "$payload" --debug || true
 
 apiregistryctl -H "$host" service list | grep catalogue

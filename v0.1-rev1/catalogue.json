@@ -45,7 +45,7 @@
   "consumes": ["application/json;charset=UTF-8"],
   "produces": ["application/json;charset=UTF-8"],
   "paths": {
-    "/catalogues": {
+    "/catalogue": {
       "get": {
         "tags": ["Sample"],
         "security": [
@@ -890,6 +890,7 @@
     },
     "/catalogue/size": {
       "get": {
+        "deprecated": true,
         "description": "Get size",
         "operationId": "Get-size",
         "tags": ["Sample"],
@@ -1251,10 +1252,9 @@
         }
       }
     },
-    "/tags": {
+    "/tag": {
       "get": {
         "description": "OK",
-        "deprecated": true,
         "operationId": "List_",
         "tags": ["Sample"],
         "security": [

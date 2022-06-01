@@ -2,6 +2,9 @@
 
 set -ex
 
+source ./env.sh
+host=${host:-https://devnet-testing.cisco.com}
+
 if [ -z "$1" ]; then
   echo please specify the service/org keyword that you want to delete
   exit

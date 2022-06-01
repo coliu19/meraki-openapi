@@ -1,14 +1,15 @@
 #! /bin/bash
 set -x
 
+source ./env.sh
+host=${host:-https://devnet-testing.cisco.com}
+
 # If demo/test in other branch (like demo) other master
 # git push origin --delete demo
 # git branch -d demo
 # git checkout -b demo
 # git branch -u origin/demo
 
-# host=http://localhost:8081
-host=https://devnet-testing.cisco.com
 # TODO: cart or carts
 services=( "cart" "catalogue" "payment" "user" "order")
 product_tag="DevRel Wear"
@@ -19,7 +20,7 @@ for service in ${services[*]}; do
   service_title="$(tr '[:lower:]' '[:upper:]' <<< ${service:0:1})${service:1}"
 
   echo delete "$service"
-  apiregistryctl service delete "$service" --debug || true
+  apiregistryctl -H "$host" service delete "$service" --debug || true
   echo create "$service"
 
   printf -v payload '{ "organization_id": "DevNet", "product_tag": "%s", "name_id": "%s", "title": "%s Demo API", "description": "%s microservice for %s demo application", "contact": {"name": "Engineering Team", "email": "engineering@merchandiseshop.com", "url": "https://app-8081-apiregistry1.devenv-int.ap-ne-1.devnetcloud.com/"}, "analyzers_configs": {"drift": {"service_name_id": "%s.sock-shop"}} }' "$product_tag" "$service" "$service_title" "$service_title" "$product_tag" "$service"

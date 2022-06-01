@@ -13,6 +13,7 @@ chmod +x /usr/local/bin/apiregistryctl
 ## Demo
 
 You can simply follow the below steps to demo in staging without viewing other parts of the document.
+If you want to use other env, just change the `host` in `.env` to other values.
 If you want to use other branch for test to avoid too much commits in master branch, you can run `./use-other-branch.sh`.
 
 ```

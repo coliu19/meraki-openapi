@@ -33,13 +33,16 @@ echo "## Upload the v0.0-rev1 specs which are the base raw specs"
 for service in ${services[*]}; do
   echo updateload spec for "$service"
   apiregistryctl -H "$host" service uploadspec v0.0-rev1/"$service".json -s "$service" --version v0.0 --revision 1
-  sleep 30
+  sleep 1
 done
+
+sleep 35
 
 echo "## Upload the v0.0-rev2 specs which are the perfect specs"
 for service in ${services[*]}; do
   echo updateload spec for "$service"
   apiregistryctl -H "$host" service uploadspec v0.0-rev2/"$service".json -s "$service" --version v0.0 --revision 2
-  sleep 30
+  sleep 1
 done
+sleep 30
 echo "## Finished prepare works"

@@ -53,7 +53,11 @@ jobs:
   upload:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
+    # Run parallelly
+    # if: startsWith(github.ref, 'refs/tags/v')
+    # Use the below one instead of the above to Run sequentially
+    needs: analyze
+    if: always() && startsWith(github.ref, 'refs/tags/v')
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

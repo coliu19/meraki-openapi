@@ -12,7 +12,7 @@ host=${host:-https://devnet-testing.cisco.com}
 
 # TODO: cart or carts
 services=( "cart" "catalogue" "payment" "user" "order")
-product_tag="DevRel Wear"
+product_tag="DevRel Store"
 
 echo "## Prepare services"
 for service in ${services[*]}; do

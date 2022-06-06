@@ -5,7 +5,7 @@ source ./env.sh
 host=${host:-https://devnet-testing.cisco.com}
 
 service=catalogue
-product_tag="DevRel Wear"
+product_tag="DevRel Store"
 service_title="$(tr '[:lower:]' '[:upper:]' <<< ${service:0:1})${service:1}"
 
 apiregistryctl -H "$host" service delete "$service" --debug || true

@@ -439,7 +439,7 @@
             "BearerAuth": []
           }
         ],
-        "description": "Get personalize data per vendor's blacklist",
+        "description": "Get personalize data per vendor's denylist",
         "operationId": "List-catalogue-personalize",
         "produces": ["application/json;charset=UTF-8"],
         "parameters": [
@@ -546,6 +546,272 @@
                   }
                 ]
               }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "TRACKINGID": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "Date": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "ETag": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-None-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "TRACKINGID": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "Date": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "ETag": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-None-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "TRACKINGID": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "Date": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "ETag": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-None-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "headers": {
+              "TRACKINGID": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "Date": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "ETag": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-None-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "headers": {
+              "TRACKINGID": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "Date": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "ETag": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-None-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "TRACKINGID": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "Date": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "ETag": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-None-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "headers": {
+              "TRACKINGID": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "Date": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "ETag": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              },
+              "If-None-Match": {
+                "maxLength": 255,
+                "minLength": 1,
+                "pattern": "[^/]*",
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Error"
             }
           }
         }

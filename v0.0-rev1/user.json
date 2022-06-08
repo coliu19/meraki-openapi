@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "",
+    "version": "v0.0",
     "title": "User",
     "description": "Provide Customer login, register, retrieval, as well as card and address retrieval",
     "license": {
